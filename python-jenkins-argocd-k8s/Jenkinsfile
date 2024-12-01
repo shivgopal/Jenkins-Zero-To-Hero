@@ -11,7 +11,7 @@ pipeline {
         stage('Checkout'){
            steps {
                 git credentialsId: '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', 
-                url: 'https://github.com/iam-veeramalla/cicd-end-to-end',
+                url: 'https://github.com/shivgopal/cicd-end-to-end',
                 branch: 'main'
            }
         }
@@ -32,7 +32,7 @@ pipeline {
                 script{
                     sh '''
                     echo 'Push to Repo'
-                    docker push ashivbhole/cicd-e2e:${BUILD_NUMBER}
+                    docker push shivbhole/cicd-e2e:${BUILD_NUMBER}
                     '''
                 }
             }
